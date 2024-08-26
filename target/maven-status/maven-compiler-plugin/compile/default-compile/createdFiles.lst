@@ -1,0 +1,5 @@
+Logic\Classes\CriptoActivo.class
+Logic\Classes\Digital_Wallet.class
+Logic\Interfaces\CriptoSymbol.class
+Logic\Classes\User.class
+Principal\Main.class
