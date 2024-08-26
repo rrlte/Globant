@@ -16,4 +16,9 @@ public class Digital_Receipt {
     // Si fue compra o venta (Como colocar enum como atributo)
     
     // Se debe guardar el registro de todas las transacciones
+    
+    //El vendedor siempre debe obtener la ganancia maxima posible
+    //Debe haber una cantidad de suficiente compradores
+    //El propio intercambio actúa como intermediario, facilitando la 
+    //combinación de órdenes de compra y venta de diferentes usuarios.
 }

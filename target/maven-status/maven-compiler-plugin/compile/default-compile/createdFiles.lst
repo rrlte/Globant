@@ -1,5 +1,9 @@
 Logic\Classes\CriptoActivo.class
+Logic\Classes\Digital_Receipt.class
+Logic\Classes\BuyOrder.class
 Logic\Classes\Digital_Wallet.class
+Logic\Classes\SaleOrder.class
 Logic\Interfaces\CriptoSymbol.class
 Logic\Classes\User.class
 Principal\Main.class
+Logic\Classes\Transaction.class

@@ -15,19 +15,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Bienvenido al Sistema de intercambio Cripto!!!");
-        System.out.println("Empecemos creandote una cuenta");
-        System.out.println("Dinos tu nombre:");
-        String name = sc.nextLine();
-        System.out.println("Dinos tu email:");
-        String email = sc.nextLine();
+        System.out.println("Menu principal\n 1.Registrarse");
+        System.out.println("Nota: Escoge un numero, dependiendo de que actividad deseas realizar: ");
+        String numbselect = sc.next();
+        //System.out.println("Empecemos creandote una cuenta");
+        //System.out.println("Dinos tu nombre:");
+        //String name = sc.nextLine();
+        //System.out.println("Dinos tu email:");
+        //String email = sc.nextLine();
         // Represento la "ñ" con los caracteres "ni"
-        System.out.println("Dinos una contrasenia:");
-        String password = sc.nextLine();
-        System.out.println("Felicidades acabas de registrarte!!!");
+        //System.out.println("Dinos una contrasenia:");
+        //String password = sc.nextLine();
+        //System.out.println("Felicidades acabas de registrarte!!!");
         // Aqui abajo va el id personal
-        System.out.println("Este es tu nuevo ID personal");
-        
-        
+        //System.out.println("Este es tu nuevo ID personal");
         sc.close();
     }
 }
