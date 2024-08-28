@@ -1,0 +1,26 @@
+# Archivos de NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+build/
+nb-configuration.xml
+
+# Archivos de NetBeans en general
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Archivos de configuración de NetBeans
+nb-configuration.xml
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de compilación
+/build/
+**/build/
+**/dist/
