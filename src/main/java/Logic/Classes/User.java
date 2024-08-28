@@ -14,8 +14,14 @@ public class User {
     String name;
     String email;
     String password;
+
+    public User(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
     
-    public String retornaId(String name){  
+    public String retornaId(){  
         UUID randomId = UUID.randomUUID();     
         String userId = randomId.toString();
         return userId;
