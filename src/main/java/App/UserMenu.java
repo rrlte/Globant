@@ -9,8 +9,10 @@ package App;
  * @author ARIAN
  */
 import Logic.Classes.BuyOrder;
+import Logic.Classes.CriptoActivos;
 import Logic.Classes.DigitalWallet;
 import Logic.Classes.SaleOrder;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -40,7 +42,7 @@ public class UserMenu extends UserRegistration{
             switch (numbselect){
                 case 1 -> {
                     System.out.println("Cuanto dinero quieres depositar");
-                    int cantidad = Integer.parseInt(sc.next());          
+                    BigDecimal cantidad = new BigDecimal(sc.next());          
                     wallet.depositoDeDinero(cantidad);
                     wallet.dineroActual();
                     break;
@@ -54,7 +56,10 @@ public class UserMenu extends UserRegistration{
                     System.out.println("Ingrese el tipo de Criptomoneda que desea comprar");
                     String criptomoneda = sc.next();
                     System.out.println("Que cantidad desea comprar");
-                    String cantidad = sc.next();
+                    String valor = sc.next();
+                    BigDecimal cantidad = new BigDecimal(valor);
+                    CriptoActivos compra = new CriptoActivos();
+                    compra.comprarCripto(criptomoneda, cantidad, wallet.getEfectivo(),wallet);
                     break;
                 }
                 
