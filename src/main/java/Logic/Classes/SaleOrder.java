@@ -10,6 +10,10 @@ package Logic.Classes;
  */
 public class SaleOrder {
     
+    String criptomoneda;
+    String cantidad;
+    String precioMax;
+    
     //Tipo de criptomoneda
     
    //La cantidad que desea vender
@@ -17,5 +21,11 @@ public class SaleOrder {
     //El precio minimo que aceptara
     
     // En el libro de ordenes estara nuestra orden de venta
+
+    public SaleOrder(String criptomoneda, String cantidad, String precioMax) {
+        this.criptomoneda = criptomoneda;
+        this.cantidad = cantidad;
+        this.precioMax = precioMax;
+    }
     
 }

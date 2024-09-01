@@ -2,6 +2,7 @@ package Principal;
 
 import App.UserAuthentication;
 import App.UserRegistration;
+import Logic.Classes.DigitalWallet;
 import Logic.Classes.User;
 import java.util.Scanner;
 
@@ -20,8 +21,12 @@ public class Main {
         System.out.println("Bienvenido al Sistema de intercambio Cripto!!!");
         int numbselect;
         do{
-            System.out.println("Menu principal\n 1.Registrarse\n 2.Iniciar sesion\n 4.Salir");
-            System.out.println("Nota: Escoge un numero, dependiendo de que actividad deseas realizar: ");
+            System.out.println("""
+                               Menu Principal:
+                               1.Registrarse
+                               2.Iniciar sesion
+                               4.Salir""");
+            System.out.println("Nota: Escoge un numero, dependiendo de que actividad deseas realizar");
             
             numbselect = Integer.parseInt(sc.next());
             sc.nextLine();
@@ -35,7 +40,8 @@ public class Main {
                     System.out.println("Ingresa una contrasenia segura:");
                     String password = sc.next(); 
                     User user = new User(name,email,password);
-                    System.out.println(UserRegistration.userRegister(user));
+                    DigitalWallet wallet = new DigitalWallet();
+                    System.out.println(UserRegistration.userRegister(user, wallet));
                     break;
                 }
                 case 2 -> {
@@ -43,12 +49,16 @@ public class Main {
                     String email = sc.next();
                     System.out.println("Ingresa su contrasenia:");
                     String password = sc.next();
-                    System.out.println(UserAuthentication.verificar(email, password));
+                    UserAuthentication.verificar(email, password);
                     break;
                 }
                 
                 case 4 ->{
                     System.out.println("Muchas gracias por usar mi aplicacion");
+                }
+                
+                default -> {
+                    System.out.println("Escogio una opcion incorrecta, intentelo de nuevo");
                 }
             }
             

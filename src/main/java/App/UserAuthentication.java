@@ -4,20 +4,20 @@
  */
 package App;
 
-/**
- *
- * @author ARIAN
- */
 import Logic.Classes.User;
 
-public class UserAuthentication extends UserRegistration{
+/**
+ *
+ * @author arian
+ */
+public class UserAuthentication {
     
-    public static String verificar(String email, String password) {
+    public static void verificar(String email, String password) {
         User user = UserRegistration.getUsers().get(email);
         if (user != null && user.getPassword().equals(password)) {
-            return "Bien hecho"; // Autenticación exitosa
-        }
-        return "Tienes un error"; // Autenticación fallida
+            UserMenu.menuDeInicio(email); 
+        }else{
+            System.out.println("Credenciales incorrectas, intente nuevamente");
+        }   
     }
 }
-
