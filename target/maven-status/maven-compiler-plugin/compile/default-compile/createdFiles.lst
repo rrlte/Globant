@@ -1,7 +1,7 @@
 Logic\Classes\DigitalWallet.class
-Logic\Classes\CriptoActivo.class
 Logic\Classes\Digital_Receipt.class
 App\UserMenu.class
+Logic\Classes\CriptoActivos.class
 Logic\Classes\BuyOrder.class
 App\UserAuthentication.class
 Logic\Classes\SaleOrder.class

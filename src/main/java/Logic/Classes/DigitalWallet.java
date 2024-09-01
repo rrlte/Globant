@@ -12,18 +12,34 @@ import java.math.BigDecimal;
  */
 public class DigitalWallet {
     
-    double efectivo = 0;
+    BigDecimal efectivo = new BigDecimal("0");
     BigDecimal BTC = new BigDecimal("0");
     BigDecimal ETH = new BigDecimal("0");
     
-    public void depositoDeDinero(int valor){
-        efectivo = efectivo + valor;
+    public void depositoDeDinero(BigDecimal valor){
+        efectivo = efectivo.add(valor);
+    }
+    
+    public void depositoDeBTC(BigDecimal valor){
+        BTC = BTC.add(valor);
+    }
+    
+    public void depositoDeETH(BigDecimal valor){
+        ETH = ETH.add(valor);
+    }
+    
+    public void restarDinero(BigDecimal valor){
+        efectivo = efectivo.subtract(valor);
     }
     
     public void mostrarActivos() {
         System.out.println("Efectivo: $" + efectivo);
         System.out.println("BTC: " + BTC.toPlainString() + " BTC");
         System.out.println("ETH: " + ETH.toPlainString() + " ETH");
+    }
+
+    public BigDecimal getEfectivo() {
+        return efectivo;
     }
     
     public void dineroActual(){     
