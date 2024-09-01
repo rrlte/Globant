@@ -9,6 +9,11 @@ package Logic.Classes;
  * @author ARIAN
  */
 public class BuyOrder {
+    
+    String criptomoneda;
+    String cantidad;
+    String precioMin;
+    
     //tipo de criptomodena
     //cantidad que desea comprar
     //precio maximo dispuesto a pagar
@@ -21,4 +26,11 @@ public class BuyOrder {
     //se actualiza la billetera de los implicados
     //combinamos orden de compra y venta
     // para hacer operaciones
+
+    public BuyOrder(String criptomoneda, String cantidad, String precioMin) {
+        this.criptomoneda = criptomoneda;
+        this.cantidad = cantidad;
+        this.precioMin = precioMin;
+    }
+    
 }
