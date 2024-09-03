@@ -4,28 +4,38 @@
  */
 package Logic.Classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author ARIAN
  */
-public class SaleOrder {
+public class SaleOrder extends User {
     
     String criptomoneda;
-    String cantidad;
-    String precioMax;
-    
-    //Tipo de criptomoneda
-    
-   //La cantidad que desea vender
-    
-    //El precio minimo que aceptara
-    
-    // En el libro de ordenes estara nuestra orden de venta
+    double cantidad;
+    double precioMin;
+    public static List<SaleOrder> ordenesDeVenta = new ArrayList<>();
 
-    public SaleOrder(String criptomoneda, String cantidad, String precioMax) {
+    public SaleOrder(String criptomoneda, double cantidad, double precioMin, String email) {
+        super(email);
         this.criptomoneda = criptomoneda;
         this.cantidad = cantidad;
-        this.precioMax = precioMax;
+        this.precioMin = precioMin;
+        ordenesDeVenta.add(this);
     }
-    
+
+    public double getCantidad() {
+        return cantidad;
+    }
+
+    public double getPrecioMin() {
+        return precioMin;
+    }
+
+    public String getCriptomoneda() {
+        return criptomoneda;
+    }
+
 }

@@ -4,14 +4,14 @@
  */
 package Logic.Classes;
 
-import Logic.Interfaces.CriptoSymbol;
+
 import java.math.BigDecimal;
 
 /**
  *
  * @author ARIAN
  */
-public class CriptoActivos implements CriptoSymbol {
+public class CriptoActivos {
 
     int valorBitcoin = 58544;
     int valorEthereum = 2488;
@@ -27,6 +27,7 @@ public class CriptoActivos implements CriptoSymbol {
                     BTC = BTC.subtract(cantidad);
                     wallet.depositoDeBTC(cantidad);
                     wallet.restarDinero(valorDeCompra);
+                    System.out.println("Compra realiza correctamente");
                 } else {
                     System.out.println("No tiene los fondos suficientes");
                 }
@@ -43,13 +44,13 @@ public class CriptoActivos implements CriptoSymbol {
             }
         }
     }
-
-    @Override
-    public String simbolo() {
-        return "simbolo";
+    
+    public void getBTC() {
+        System.out.println("El valor de un Bitcoin es: " + valorBitcoin);
     }
 
-    // Encontrar una forma de representar cada cripto con un abreviado
-    // Crear un identificador unico para cada cripto
-    //La memoria de reconocer el valor de cada cripto en todo momento
+    public void getETH() {
+        System.out.println("El valor de un Ethereum es: " + valorEthereum);
+    }
+
 }

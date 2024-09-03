@@ -8,23 +8,19 @@ package App;
  *
  * @author ARIAN
  */
-import Logic.Classes.BuyOrder;
 import Logic.Classes.CriptoActivos;
 import Logic.Classes.DigitalWallet;
-import Logic.Classes.SaleOrder;
+import Logic.Classes.Transaction;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class UserMenu extends UserRegistration{
-    
-    private static Map<String, SaleOrder> ordenesDeCompra = new HashMap<>();
     
     public static void menuDeInicio(String email){
         DigitalWallet wallet = getWallets().get(getUsers().get(email).getId());
         Scanner sc = new Scanner(System.in);
         int numbselect;
+
         do{
             System.out.println("""
                                Menu principal de Inicio de Sesion
@@ -33,7 +29,8 @@ public class UserMenu extends UserRegistration{
                                3.Comprar Criptomonedas
                                4.Realizar una orden de compra
                                5.Realizar una orden de venta
-                               6.Ver historial de transacciones""");
+                               6.Ver historial de transacciones
+                               7.Salir de la cuenta""");
             System.out.println("Nota: Escoge un numero, dependiendo de que actividad deseas realizar");
             
             numbselect = Integer.parseInt(sc.next());
@@ -53,9 +50,10 @@ public class UserMenu extends UserRegistration{
                 }
                 
                 case 3 -> {
-                    System.out.println("Ingrese el tipo de Criptomoneda que desea comprar");
+                    System.out.println("Ingrese el tipo de Criptomoneda que desea comprar:");
+                    System.out.println("Nota: Escriba 'Bitcoin' o 'Ethereum'");
                     String criptomoneda = sc.next();
-                    System.out.println("Que cantidad desea comprar");
+                    System.out.println("Que cantidad desea comprar:");
                     String valor = sc.next();
                     BigDecimal cantidad = new BigDecimal(valor);
                     CriptoActivos compra = new CriptoActivos();
@@ -64,24 +62,38 @@ public class UserMenu extends UserRegistration{
                 }
                 
                 case 4 -> {
-                    System.out.println("Ingrese el tipo de Criptomoneda que desea comprar");
+                    System.out.println("Ingrese el tipo de Criptomoneda que desea comprar:");
+                    System.out.println("Nota: Escriba 'BTC' o 'ETH'");
                     String criptomoneda = sc.next();
-                    System.out.println("Ingrese la cantidad que desea comprar");
-                    String cantidad = sc.next();
-                    System.out.println("Ingrese el precio maximo que esta dispuesto a pagar");
-                    String precioMax = sc.next();
-                    SaleOrder ordenDeCompra = new SaleOrder(criptomoneda, cantidad, precioMax);
+                    System.out.println("Ingrese la cantidad que desea comprar:");
+                    double cantidad = Double.parseDouble(sc.next());
+                    System.out.println("Ingrese el precio maximo que esta dispuesto a pagar:");
+                    double precioMax = Double.parseDouble(sc.next());
+                    Transaction transaccion = new Transaction();
+                    transaccion.ejecutarCompra(criptomoneda, cantidad, precioMax, email);
                     break;
                 }
                 
                 case 5 -> {
-                    System.out.println("Ingrese el tipo de Criptomoneda que desea comprar");
+                    System.out.println("Ingrese el tipo de Criptomoneda que desea vender:");
+                    System.out.println("Nota: Escriba 'BTC' o 'ETH'");
                     String criptomoneda = sc.next();
-                    System.out.println("Ingrese la cantidad que desea vender");
-                    String cantidad = sc.next();
-                    System.out.println("Ingrese el precio minimo que esta dispuesto a pagar");
-                    String precioMin = sc.next();
-                    BuyOrder ordenDeVenta = new BuyOrder(criptomoneda, cantidad, precioMin);
+                    System.out.println("Ingrese la cantidad que desea vender:");
+                    double cantidad = Double.parseDouble(sc.next());
+                    System.out.println("Ingrese el precio minimo que esta dispuesto a vender:");
+                    double precioMin = Double.parseDouble(sc.next());
+                    Transaction transaccion = new Transaction();
+                    transaccion.ejecutarCompra(criptomoneda, cantidad, precioMin, email);
+                    break;
+                }
+                
+                case 6 ->{
+                    System.out.println("Vista de todos los recibos");
+                    break;
+                }
+                
+                case 7 ->{
+                    System.out.println("Vuelva pronto!!!");
                     break;
                 }
                 
@@ -90,6 +102,6 @@ public class UserMenu extends UserRegistration{
                 }
             }
             
-        } while(numbselect != 10);
+        } while(numbselect != 7);
     }  
 }

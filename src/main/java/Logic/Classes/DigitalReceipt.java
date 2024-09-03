@@ -8,7 +8,7 @@ package Logic.Classes;
  *
  * @author ARIAN
  */
-public class Digital_Receipt {
+public class DigitalReceipt {
     
     // Criptomoneda involucrada
     // Cantidad de venta

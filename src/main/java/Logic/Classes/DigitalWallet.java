@@ -28,8 +28,28 @@ public class DigitalWallet {
         ETH = ETH.add(valor);
     }
     
-    public void restarDinero(BigDecimal valor){
-        efectivo = efectivo.subtract(valor);
+    public void restarDinero(BigDecimal cantidad) {
+        if (cantidad.compareTo(efectivo) <= 0) {
+            efectivo = efectivo.subtract(cantidad);
+        } else {
+            throw new IllegalArgumentException("Fondos insuficientes en efectivo.");
+        }
+    }
+    
+    public void restarBitcoin(BigDecimal cantidad) {
+        if (cantidad.compareTo(BTC) <= 0) {
+            BTC = BTC.subtract(cantidad);
+        } else {
+            throw new IllegalArgumentException("Fondos insuficientes en Bitcoin.");
+        }
+    }
+    
+    public void restarEthereum(BigDecimal cantidad) {
+        if (cantidad.compareTo(ETH) <= 0) {
+            ETH = ETH.subtract(cantidad);
+        } else {
+            throw new IllegalArgumentException("Fondos insuficientes en Ethereum.");
+        }
     }
     
     public void mostrarActivos() {
@@ -45,7 +65,5 @@ public class DigitalWallet {
     public void dineroActual(){     
         System.out.println("Este es tu dinero en efectivo actual: $" + efectivo);
     }
-    
-    // Crear una funcion que muestre todas tus criptos
     
 }

@@ -25,7 +25,7 @@ public class Main {
                                Menu Principal:
                                1.Registrarse
                                2.Iniciar sesion
-                               4.Salir""");
+                               3.Salir""");
             System.out.println("Nota: Escoge un numero, dependiendo de que actividad deseas realizar");
             
             numbselect = Integer.parseInt(sc.next());
@@ -53,7 +53,7 @@ public class Main {
                     break;
                 }
                 
-                case 4 ->{
+                case 3 ->{
                     System.out.println("Muchas gracias por usar mi aplicacion");
                 }
                 
@@ -62,7 +62,7 @@ public class Main {
                 }
             }
             
-        } while(numbselect != 4); 
+        } while(numbselect != 3); 
         sc.close(); 
     }
 }

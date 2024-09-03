@@ -10,11 +10,15 @@ import java.util.UUID;
  *
  * @author ARIAN
  */
-public class User {
+public class User extends DigitalWallet{
     String name;
     String email;
     String password;
     String id = retornaId();
+
+    public User(String email) {
+        this.email = email;
+    }
 
     public User(String email, String password) {
         this.email = email;
@@ -44,4 +48,5 @@ public class User {
     public String getId() {
         return id;
     }
+
 }

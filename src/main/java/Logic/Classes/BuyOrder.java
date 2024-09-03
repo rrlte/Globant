@@ -4,6 +4,9 @@
  */
 package Logic.Classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author ARIAN
@@ -11,26 +14,31 @@ package Logic.Classes;
 public class BuyOrder {
     
     String criptomoneda;
-    String cantidad;
-    String precioMin;
-    
-    //tipo de criptomodena
-    //cantidad que desea comprar
-    //precio maximo dispuesto a pagar
-    
-    //antes de operar debe depositar en su cuenta
-    //de modo que pueda ver su dinero disponible
-    // compra por medio ordenes de compra
-    // compra por medio de intercambio (opcional)
-    //se verifica que tenga el dinero
-    //se actualiza la billetera de los implicados
-    //combinamos orden de compra y venta
-    // para hacer operaciones
+    double cantidad;
+    double precioMax;
+    public static List<BuyOrder> ordenesDeCompra = new ArrayList<>();
 
-    public BuyOrder(String criptomoneda, String cantidad, String precioMin) {
+    public BuyOrder(String criptomoneda, double cantidad, double precioMax) {
         this.criptomoneda = criptomoneda;
         this.cantidad = cantidad;
-        this.precioMin = precioMin;
+        this.precioMax = precioMax;
+        ordenesDeCompra.add(this);
+    } 
+
+    public double getCantidad() {
+        return cantidad;
     }
-    
+
+    public double getPrecioMax() {
+        return precioMax;
+    }
+
+    public String getCriptomoneda() {
+        return criptomoneda;
+    }
+
+    public static List<BuyOrder> getOrdenesDeCompra() {
+        return ordenesDeCompra;
+    }
+
 }
